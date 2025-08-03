@@ -1,12 +1,28 @@
-'use client'
+'use client';
+
 import React, { useState } from 'react';
-import { Box, Container, Typography, IconButton, Drawer, List, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import Link from 'next/link';
+import {
+  Box,
+  Container,
+  Typography,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+
+const navItems = [
+  { label: 'MTNCommunications', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Book A Meeting', href: '/contact' }, // Contact page
+];
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const navItems = ['MTNCommunications', 'Services', 'Projects', 'Book A Meeting'];
 
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
@@ -14,12 +30,21 @@ export default function Header() {
 
   return (
     <Box sx={{ width: '100%', backgroundColor: 'red', height: '70px' }}>
-      <Container sx={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: {md: 'space-between', xs: 'flex-end'} }}>
+      <Container
+        sx={{
+          height: '70px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: { md: 'space-between', xs: 'flex-end' },
+        }}
+      >
         <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '25px' }}>
-          {navItems.map((item) => (
-            <Typography key={item} sx={{ color: 'white', cursor: 'pointer' }}>
-              {item}
-            </Typography>
+          {navItems.map(({ label, href }) => (
+            <Link key={label} href={href} passHref>
+              <Typography sx={{ color: 'white', cursor: 'pointer' }}>
+                {label}
+              </Typography>
+            </Link>
           ))}
         </Box>
 
@@ -43,13 +68,14 @@ export default function Header() {
             onKeyDown={toggleDrawer(false)}
           >
             <List>
-              {navItems.map((text) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
+              {navItems.map(({ label, href }) => (
+                <ListItem key={label} disablePadding>
+                  <Link href={href} passHref style={{ width: '100%' }}>
+                    <ListItemButton component="a">
+                      <Typography>{label}</Typography>
+                    </ListItemButton>
+                  </Link>
                 </ListItem>
-
               ))}
             </List>
           </Box>
