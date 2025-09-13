@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <Box sx={{ width: '100%', backgroundColor: 'red', height: '70px' }}>
+    <Box sx={{ width: '100%', backgroundColor: '#000000', height: '70px' }}>
       <Container
         sx={{
           height: '70px',
@@ -41,9 +41,37 @@ export default function Header() {
         <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '25px' }}>
           {navItems.map(({ label, href }) => (
             <Link key={label} href={href} passHref>
-              <Typography sx={{ color: 'white', cursor: 'pointer' }}>
-                {label}
-              </Typography>
+<Typography
+  sx={{
+    color: 'white',
+    cursor: 'pointer',
+    fontWeight: 500,
+    fontSize: '1rem',
+    letterSpacing: '0.5px',
+    position: 'relative',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      color: 'rgb(187, 14, 128)', 
+      transform: 'translateY(-2px)',
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: -4,
+      left: 0,
+      width: '0%',
+      height: '2px',
+      backgroundColor: 'rgb(187, 14, 128)',
+      transition: 'width 0.3s',
+    },
+    '&:hover::after': {
+      width: '100%',
+    },
+  }}
+>
+  {label}
+</Typography>
+
             </Link>
           ))}
         </Box>

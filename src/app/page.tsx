@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
+import Link from 'next/link';
 
 export default function Page() {
   return (
@@ -57,10 +58,7 @@ export default function Page() {
         <Typography variant="h5" sx={{ my: 1, fontSize: {md: '24px', xs: '14px'} }}>
           We make sure that your ideas turn into top-tier projects for 20% cut-rate price
         </Typography>
-        <Button color='primary'>
-            {/* color?: OverridableStringUnion<'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides>; */}
-          Explore
-        </Button>
+        <Link style={{color: 'rgb(187, 14, 128)', fontWeight: '600'}} href="/services">Explore</Link>
       </Box>
     </Box>
   );

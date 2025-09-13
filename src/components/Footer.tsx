@@ -9,7 +9,7 @@ export default function Footer() {
       component="footer"
       sx={{
         width: '100%',
-        backgroundColor: 'red',
+        backgroundColor: '#1C1C1C',
         color: 'white',
         py: 2
       }}
@@ -23,7 +23,7 @@ export default function Footer() {
           © 2025 MTN Communications. All Rights Reserved.
         </Typography>
 
-        <Box
+        {/* <Box
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -56,7 +56,7 @@ export default function Footer() {
           >
             <LinkedIn />
           </IconButton>
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   );

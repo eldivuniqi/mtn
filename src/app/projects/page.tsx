@@ -1,5 +1,5 @@
 import CustomCard from '@/components/CustomCard';
-import { Typography, Card, CardContent, Grid, CardActionArea, CardMedia } from '@mui/material';
+import { Typography, Card, CardContent, Grid, CardActionArea, CardMedia, Container } from '@mui/material';
 import Link from 'next/link';
 
 const mockProjects = Array.from({ length: 12 }).map((_, i) => ({
@@ -11,13 +11,24 @@ const mockProjects = Array.from({ length: 12 }).map((_, i) => ({
 
 export default function Projects() {
   return (
-    <>
-      <Typography variant="h4" gutterBottom>Projects</Typography>
-      <Grid container spacing={2}>
+    <Container sx={{my: 5}}>
+      <Grid container spacing={2} sx={{pb: 10}}>
         {mockProjects.map((project) => (
-          <Grid key={project.id}>
+          <Grid key={project.id} 
+                sx={{
+        flex: '1 1 calc(100% - 16px)', 
+        maxWidth: {
+          xs: '100%',
+          sm: '48%', 
+          md: '31%', 
+          lg: '23.5%', 
+        },
+        minWidth: '260px', 
+        boxSizing: 'border-box',
+      }}
+          >
             <Link href={`/projects/${project.id}`} passHref>
-              <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%', width: {md: '270px', xs: '100%'} }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -39,7 +50,8 @@ export default function Projects() {
           </Grid>
         ))}
       </Grid>
-      <CustomCard text='hello' buttonText='hellooo'/>
-    </>
+      <CustomCard text='Get in Touch with Us?' 
+                        href="/contact" buttonText='Contact Us' />
+    </Container>
   );
 }

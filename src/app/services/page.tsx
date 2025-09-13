@@ -28,6 +28,7 @@ export default function Services() {
         { title: '20% Better', description: 'All projects and its specific phase requirements are processed by licensed and certified professionals. Prior to preliminary or final deliveries all documents are checked by quality control division.' },
         { title: '20% Cheaper', description: 'The difference in welfare of our partnering countries allows us to guarantee price reduction in rendered professional services.' },
     ];
+    
 
     return (
         <Box
@@ -43,7 +44,7 @@ export default function Services() {
                 py: 6,
             }}
         >
-            <Box sx={{ maxWidth: 600, mb: 6 }}>
+            <Box sx={{ maxWidth: "600px", mb: 6 }}>
                 <Typography variant="h3" gutterBottom>
                     Connecting the world through design.
                 </Typography>
@@ -54,59 +55,90 @@ export default function Services() {
                 </Typography>
             </Box>
 
-            <Container maxWidth="md">
-                <Grid container spacing={4} justifyContent="center">
-                    {cards.map(({ title, description }) => (
-                        <Grid container spacing={2} key={title}>
-                            <Card
-                                sx={{
-                                    height: '100%',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    px: 3,
-                                    py: 4,
-                                    textAlign: 'center',
-                                }}
-                                elevation={3}
-                            >
-                                <CardContent>
-                                    <Typography variant="h6" gutterBottom>
-                                        {title}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {description}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
+            <Container maxWidth="lg" sx={{ display: 'flex', justifyContent: 'center' }}>
+<Box
+  sx={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 3,
+    justifyContent: 'center',
+    px: 2,
+    py: 4,
+  }}
+>
+  {cards.map(({ title, description }, index) => (
+    <Card
+      key={index}
+      sx={{
+        width: 330,
+        minHeight: 300,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        textAlign: 'center',
+        px: 3,
+        py: 4,
+        borderRadius: 6,
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        backgroundColor: '#ffffff',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.1)',
+        },
+      }}
+    >
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" fontWeight="600" gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" lineHeight={1.6}>
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>
             </Container>
 
-            <Box sx={{ maxWidth: 600, my: 3 }}>
-                <Typography variant="h5" gutterBottom>
-                    Learn More
-                </Typography>
 
+            <Box sx={{ maxWidth: "1030px", mt: 12}}>
                 <Box sx={{ gap: 3 }}>
+                <Typography variant="h5" gutterBottom sx={{color: 'rgb(187, 14, 128)'}}>
+                    Comprehensive Architectural and Design Services
+                </Typography>
                     <Accordion items={accordionData} />
+                <Typography variant="h5" gutterBottom sx={{color: 'rgb(187, 14, 128)', mt: 3}}>
+                    Urban Design
+                </Typography>
                     <Accordion items={accordionData2} />
 
-                    <Box sx={{ maxWidth: 600, mb: 6 }}>
-                        <Typography variant="h5" gutterBottom>
-                            Ensuring Perfection and Precision in Every Project, Backed by Renowned Architectural Expertise.
-                        </Typography>
-                        <Typography variant="subtitle1" color="text.secondary">
-                            Our services cover the spectrum of showcasing innovative architecture and providing professional consultancy services. We connect leading architects from abroad with clients across the UK, delivering exceptional design solutions and creating impactful architectural experiences. Our platform aims
-                            to foster collaboration and inspire creativity in the world of architecture and more. Exploiting our <b style={{ color: '#bb0e80' }}>20% DISCOUNT</b>, we bring all our services at your table for a fraction of the price.
-                        </Typography>
-                    </Box>
+<Box
+  sx={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh', 
+    textAlign: 'center', 
+    px: 2, 
+  }}
+>
+  <Box sx={{ maxWidth: 600, mb: 6 }}>
+    <Typography variant="h5" gutterBottom>
+      Ensuring Perfection and Precision in Every Project, Backed by Renowned Architectural Expertise.
+    </Typography>
+    <Typography variant="subtitle1" color="text.secondary">
+      Our services cover the spectrum of showcasing innovative architecture and providing professional consultancy services. We connect leading architects from abroad with clients across the UK, delivering exceptional design solutions and creating impactful architectural experiences. Our platform aims
+      to foster collaboration and inspire creativity in the world of architecture and more. Exploiting our <b style={{ color: '#bb0e80' }}>20% DISCOUNT</b>, we bring all our services at your table for a fraction of the price.
+    </Typography>
+  </Box>
+</Box>
+
 
                     <CustomCard
                         text="Architecture for Everyone"
                         buttonText="See Projects"
-                        onButtonClick={() => alert("Button clicked!")}
+                        href="/projects"
                     />
                 </Box>
             </Box>

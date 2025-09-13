@@ -1,0 +1,43 @@
+[
+  {
+    "id": "0",
+    "title": "Olympic Village",
+    "description": "The 2030 Mediterranean Games in Pristina will feature significant architectural developments to enhance Abroads sports infrastructure. Key projects include the construction of a new national stadium, a swimming pool complex, a tennis stadium, and a shooting range. Additionally, existing venues such as the Palace of Youth and Sports will undergo renovations to meet international standards Renovations to the Palace of Youth and Sports, originally constructed in 1977, are underway to restore its larger arena, which has been out of use since a fire in 2000. The smaller arena, currently used for basketball, futsal, handball, and other events, is also being upgraded to meet FIBA standards. These architectural initiatives are part of a broader effort to modernize Abroads sports facilities, ensuring they are equipped to host international events and provide high-quality experiences for athletes and visitors",
+    "photoSrc": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "youtubeLink": "https://www.youtube.com/watch?v=m3K8f2hWTlw"
+  },
+  {
+    "id": "1",
+    "title": "Urban Pasarela",
+    "description": "The project is the result of comprehensive analyses of feasibility, functionality...",
+    "photoSrc": [
+      "https://example.com/photo2.jpg",
+      "https://example.com/photo4.jpg"
+    ],
+    "youtubeLink": "https://www.youtube.com/watch?v=xsbHS0NAlTU"
+  },
+  {
+    "id": "2",
+    "title": "Capital Traffic Transformation",
+    "description": "Prishtina has been dealing with severe traffic congestion for years...",
+    "photoSrc": ["https://example.com/photo5.jpg"],
+    "youtubeLink": "https://www.youtube.com/watch?v=2Cfp_vhtI0Y"
+  },
+  {
+    "id": "3",
+    "title": "Crossroad Solution",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+    "photoSrc": [
+      "https://example.com/photo6.jpg",
+      "https://example.com/photo7.jpg"
+    ],
+    "youtubeLink": "https://www.youtube.com/watch?v=zFejSIc0NfQ"
+  }
+]
