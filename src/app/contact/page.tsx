@@ -164,11 +164,11 @@ export default function ContactPage() {
             >
               Strategic Design Communication
             </Typography>
-            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
-            At MTN Communications, we bring the visionary expertise of renowned architects from abroad to the UK stage.
-            Our company was founded on the belief that world-class architectural expertise should be accessible and
-            affordable for everyone—whether you're an individual, a business, or a large organization.
-            </Typography>
+<Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
+  At MTN Communications, we bring the visionary expertise of renowned architects from abroad to the UK stage.
+  Our company was founded on the belief that world-class architectural expertise should be accessible and
+  affordable for everyone—whether you&apos;re an individual, a business, or a large organization.
+</Typography>
           </Box>
 
           <Box>
