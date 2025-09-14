@@ -4,30 +4,24 @@
     "title": "Olympic Village",
     "description": "The 2030 Mediterranean Games in Pristina will feature significant architectural developments to enhance Abroads sports infrastructure. Key projects include the construction of a new national stadium, a swimming pool complex, a tennis stadium, and a shooting range. Additionally, existing venues such as the Palace of Youth and Sports will undergo renovations to meet international standards Renovations to the Palace of Youth and Sports, originally constructed in 1977, are underway to restore its larger arena, which has been out of use since a fire in 2000. The smaller arena, currently used for basketball, futsal, handball, and other events, is also being upgraded to meet FIBA standards. These architectural initiatives are part of a broader effort to modernize Abroads sports facilities, ensuring they are equipped to host international events and provide high-quality experiences for athletes and visitors",
     "photoSrc": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+      "/images/Olympic/fo.jpg"
     ],
     "youtubeLink": "https://www.youtube.com/watch?v=m3K8f2hWTlw"
   },
   {
     "id": "1",
     "title": "Urban Pasarela",
-    "description": "The project is the result of comprehensive analyses of feasibility, functionality...",
+    "description": "The project is the result of comprehensive analyses of feasibility, functionality, population structure, movement and accessibility, self-sustainability, and dozens of other parameters. It will be built between the old and new parts of the neighborhood, precisely where it was planned in the original Palace of Youth project nearly five decades ago. Thus, beyond being just an overpass, it is a multifunctional urban island, with importance that goes beyond merely connecting two points in the city. The terrain configuration in the Arbëria neighborhood, with its steep slope, makes it difficult to have ample public spaces for residents. Green spaces, mini-parks with playgrounds for children, running tracks, and bike lanes will breathe life into the neighborhood and create new dimensions, while cars will continue to circulate freely underneath. To make it self-sustaining, we have designed over 2,000 square meters of ground-level commercial spaces, which can be used for business purposes. All of this, in a very modern urban island. An overpass that, in addition to connecting one neighborhood with the rest of the city, links the city with the future.",
     "photoSrc": [
-      "https://example.com/photo2.jpg",
-      "https://example.com/photo4.jpg"
+      "/images/UrbanPasarela/mbi3.jpg"
     ],
     "youtubeLink": "https://www.youtube.com/watch?v=xsbHS0NAlTU"
   },
   {
     "id": "2",
     "title": "Capital Traffic Transformation",
-    "description": "Prishtina has been dealing with severe traffic congestion for years...",
-    "photoSrc": ["https://example.com/photo5.jpg"],
+    "description": "Prishtina has been dealing with severe traffic congestion for years, with around 140,000 cars entering the city daily and slow vehicle movement causing major delays and economic losses. To address this, a comprehensive plan will reorganize traffic flow in the citys inner ring, converting key streets to one-way and building underpasses to ease vehicle flow. This plan includes dedicated lanes for vehicles, public transport, cyclists, and pedestrians. It is expected to reduce travel time significantly, improve air quality, and cut fuel costs, transforming Prishtina into a modern and more efficient city. With this reorganization, the one-way roads will have three lanes: two for vehicles and one for public transport. A bike lane will also be added, and pedestrian sidewalks and green pathways will be constructed. This solution is expected to reduce the time to circle the entire ring from 55 minutes to just 12 minutes. Time and financial losses will significantly decrease, and gas emissions are expected to fall noticeably.",
+    "photoSrc": ["/images/Traffic/traffic.png"],
     "youtubeLink": "https://www.youtube.com/watch?v=2Cfp_vhtI0Y"
   },
   {
@@ -35,9 +29,191 @@
     "title": "Crossroad Solution",
     "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
     "photoSrc": [
-      "https://example.com/photo6.jpg",
-      "https://example.com/photo7.jpg"
+        "/images/Traffic/udhe.png"
     ],
     "youtubeLink": "https://www.youtube.com/watch?v=zFejSIc0NfQ"
+  },
+    {
+    "id": "4",
+    "title": "Boulevard",
+    "description": "The project is the result of comprehensive analyses of feasibility, functionality...",
+"photoSrc": [
+  "/images/Boulevard/0001.jpg",
+  "/images/Boulevard/0003.jpg",
+  "/images/Boulevard/0004.jpg",
+  "/images/Boulevard/0008.jpg",
+  "/images/Boulevard/0009.jpg",
+  "/images/Boulevard/0011.jpg",
+  "/images/Boulevard/0012.jpg",
+  "/images/Boulevard/0014.jpg",
+  "/images/Boulevard/0016.jpg",
+  "/images/Boulevard/0017.jpg",
+  "/images/Boulevard/0020.jpg",
+  "/images/Boulevard/0022.jpg",
+  "/images/Boulevard/0025.jpg",
+  "/images/Boulevard/0026.jpg",
+  "/images/Boulevard/0028.jpg",
+  "/images/Boulevard/0029.jpg",
+  "/images/Boulevard/0031.jpg",
+  "/images/Boulevard/0035.jpg",
+  "/images/Boulevard/0036.jpg",
+  "/images/Boulevard/0037.jpg",
+  "/images/Boulevard/0039.jpg",
+  "/images/Boulevard/0041.jpg",
+  "/images/Boulevard/0042.jpg",
+  "/images/Boulevard/0060.jpg"
+]
+  },
+  {
+    "id": "5",
+    "title": "Cathedral Underpass",
+    "description": "Prishtina has been dealing with severe traffic congestion for years...",
+"photoSrc": [
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0012.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0013.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0014.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0015.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0016.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0017.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0018.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0024.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0025.jpg",
+  "/images/Cathedral_Underpass/23-SHAK-06.3-Nenkalimi Katedralja-Raport-Fazes-D_page-0026.jpg"
+]
+  },
+  {
+    "id": "6",
+    "title": "Kindergarden",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+"photoSrc": [
+  "/images/Kindergarden/B08 BAZA E KULMIT 1_100.jpg",
+  "/images/Kindergarden/B02 BAZA E PERDHESES.jpg",
+  "/images/Kindergarden/F01 FASADA JUGORE.jpg",
+  "/images/Kindergarden/F02 FASADA LINDORE.jpg",
+  "/images/Kindergarden/P01 PRERJA A.jpg",
+  "/images/Kindergarden/P05 PRERJA C.jpg",
+  "/images/Kindergarden/V01 01  Vizualizimi.jpg",
+  "/images/Kindergarden/V03 02 Vizualizimi.jpg",
+  "/images/Kindergarden/V04 03 Vizualizimi.jpg",
+  "/images/Kindergarden/V05 04 Vizualizimi.jpg",
+  "/images/Kindergarden/V06 05 Vizualizimi.jpg",
+  "/images/Kindergarden/V07 06 Vizualizimi.jpg",
+  "/images/Kindergarden/V08 07 Vizualizimi.jpg",
+  "/images/Kindergarden/V09 08 Vizualizimi.jpg",
+  "/images/Kindergarden/V10 09 Vizualizimi.jpg",
+  "/images/Kindergarden/V11 10 Vizualizimi.jpg"
+]
+  },
+  {
+    "id": "7",
+    "title": "Palace of Youth",
+    "description": "Over the years, it has carried different names. But its importance and significance have remained the same. One of the city's most iconic landmarks—a testament to determination and a symbol of dedication to the common good. We’ve given it a new life. Beyond the lines on paper and the bricks held together with mortar, the Youth Palace now belongs to the digital world. To the future. But to achieve this, we had to return to the past. We delved into old plans, books, and notes buried in forgotten archives. Reconstructing it, line by line and detail by detail. Every single part. Down to the smallest elements. The halls that, beyond art and culture, hold vivid memories of historic events have been carefully analysed, piece by piece. The shops and meeting points of past eras, whose walls have absorbed countless stories, have been reopened. The gym—where sweat and tears of victories blend with the frustrations of losses—and even the spaces that have yet to witness either, have been prepared for the future. Every space. Every pillar and beam. And everything connected to them. All of it brought together in one comprehensive model. A model suited for design and visualization. For coordination and collaboration. And for documentation and specification. Management is simplified because the building’s data is complete and centralized. Every repair is easier, with costs pre-calculated, because every surface and material is known and accounted for. With accuracy and confidence. In every scenario. What you’ve already seen and what you’ll see for the first time. Because the Youth Palace, as much as it belongs to the past, is needed for the future. For the Prishtina of the future. All of it brought together in one comprehensive model. A model suited for design and visualization. For coordination and collaboration. And for documentation and specification. Management is simplified because the building’s data is complete and centralized. Every repair is easier, with costs pre-calculated, because every surface and material is known and accounted for. With accuracy and confidence. In every scenario. What you’ve already seen and what you’ll see for the first time. Because the Youth Palace, as much as it belongs to the past, is needed for the future. For the Prishtina of the future.",
+    "photoSrc": [
+      "/images/Newborn/0003.jpg",
+      "/images/Newborn/0004.jpg",
+      "/images/Newborn/0005.jpg",
+      "/images/Newborn/0006.jpg",
+      "/images/Newborn/0007.jpg",
+      "/images/Newborn/0008.jpg"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Park",
+    "description": "Prishtina has been dealing with severe traffic congestion for years...",
+    "photoSrc": [
+      "/images/Park/0003.jpg",
+      "/images/Park/0004.jpg",
+      "/images/Park/0005.jpg",
+      "/images/Park/0006.jpg",
+      "/images/Park/0007.jpg",
+      "/images/Park/0008.jpg"
+    ]
+  },
+    {
+    "id": "9",
+    "title": "Social Work Center",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+"photoSrc": [
+  "/images/QPS/3D.jpg",
+  "/images/QPS/09 Perdhesa.jpg",
+  "/images/QPS/10 Kati 1.jpg",
+  "/images/QPS/11 Kati 2.jpg",
+  "/images/QPS/12 Kati 3.jpg",
+  "/images/QPS/15 Prerja 1 1.jpg",
+  "/images/QPS/21 Fasada Lindore.jpg",
+  "/images/QPS/22 Fasada Perendimore.jpg",
+  "/images/QPS/Picture2.png",
+  "/images/QPS/Picture4.png",
+  "/images/QPS/Picture6.png"
+]
+  },
+  {
+    "id": "10",
+    "title": "Agim Ramadani - Underpass",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Road_Underpass/01 Situacioni.jpg",
+    "/images/Road_Underpass/01.NAR_Render 01_02B.jpg",
+    "/images/Road_Underpass/02 Baza dhe Prerja B-B.jpg",
+    "/images/Road_Underpass/02.NAR_Render 02_02C.jpg",
+    "/images/Road_Underpass/03 Prerja A-A dhe Prerja C-C.jpg",
+    "/images/Road_Underpass/03.NAR_Render 03_02D.jpg",
+    "/images/Road_Underpass/04.NAR_Render 04C.jpg"
+  ]
+  },
+    {
+    "id": "11",
+    "title": "Klan Kosova",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/kks.jpg"
+  ],
+    "youtubeLink": "https://www.youtube.com/embed/iUDhwnRJbPY"
+  },
+    {
+    "id": "12",
+    "title": "Barkea",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/barkea.png"
+  ],
+    "youtubeLink": "https://www.youtube.com/watch?v=sIGxVq54QZw"
+  },
+    {
+    "id": "13",
+    "title": "ENK",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/enk.png"
+  ],
+    "youtubeLink": "https://www.youtube.com/watch?v=nRyl453YfF0"
+  },
+    {
+    "id": "14",
+    "title": "52555",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/52555.png"
+  ],
+    "youtubeLink": "https://www.youtube.com/watch?v=DtalPlO3c70"
+  },
+    {
+    "id": "15",
+    "title": "Modular Newspaper Booth",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/modular.png"
+  ],
+    "youtubeLink": "https://www.youtube.com/watch?v=yzWaobr9Kao"
+  },
+    {
+    "id": "16",
+    "title": "Skanderbej Square",
+    "description": "Navigating busy intersections is a challenge faced by cities worldwide...",
+  "photoSrc": [
+    "/images/Arch/skanderbej.png"
+  ],
+    "youtubeLink": "https://www.youtube.com/watch?v=TDzZBo_4Eck"
   }
 ]
