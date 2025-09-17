@@ -7,8 +7,12 @@ import {
   TextField,
   Typography,
   useTheme,
+  Snackbar,
+  Alert,
 } from '@mui/material';
 import { useState } from 'react';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -17,18 +21,130 @@ export default function ContactPage() {
     message: '',
   });
 
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+  const validateName = (name: string) => {
+    if (!name.trim()) return 'Name is required';
+    const regex = /^[a-zA-Z\s]+$/;
+    if (!regex.test(name)) return 'Name can only contain letters and spaces';
+    return '';
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email.trim()) return 'Email is required';
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email)) return 'Invalid email address';
+    return '';
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message.trim()) return 'Message is required';
+    return '';
+  };
+
+  const validateAll = () => {
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const messageError = validateMessage(formData.message);
+
+    setErrors({
+      name: nameError,
+      email: emailError,
+      message: messageError,
+    });
+
+    return !(nameError || emailError || messageError);
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    let error = '';
+    if (name === 'name') error = validateName(value);
+    else if (name === 'email') error = validateEmail(value);
+    else if (name === 'message') error = validateMessage(value);
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
+  ) => {
+    const { name } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+
+    let error = '';
+    if (name === 'name') error = validateName(formData.name);
+    else if (name === 'email') error = validateEmail(formData.email);
+    else if (name === 'message') error = validateMessage(formData.message);
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Submitted:\n${JSON.stringify(formData, null, 2)}`);
+
+    setTouched({
+      name: true,
+      email: true,
+      message: true,
+    });
+
+    if (!validateAll()) {
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, 'contactMessages'), {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+        timestamp: serverTimestamp(),
+      });
+      setFormData({ name: '', email: '', message: '' });
+      setErrors({ name: '', email: '', message: '' });
+      setTouched({ name: false, email: false, message: false });
+
+      setSnackbarOpen(true);
+    } catch (error) {
+      console.error('Error sending message: ', error);
+      alert('Something went wrong. Please try again.');
+    }
+  };
+
+  const handleSnackbarClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') return;
+    setSnackbarOpen(false);
   };
 
   const theme = useTheme();
+
+  const isSubmitDisabled =
+    !formData.name.trim() ||
+    !formData.email.trim() ||
+    !formData.message.trim() ||
+    !!errors.name ||
+    !!errors.email ||
+    !!errors.message;
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 8, sm: 12 } }}>
@@ -52,7 +168,10 @@ export default function ContactPage() {
             mx: 'auto',
           }}
         >
-          <span style={{color: '#BB0E80', fontWeight: 600}}>20% </span>LESS FOR <span style={{color: '#BB0E80', fontWeight: 600}}>20% </span> MORE QUALITY
+          <span style={{ color: '#BB0E80', fontWeight: 600 }}>20% </span>LESS
+          FOR{' '}
+          <span style={{ color: '#BB0E80', fontWeight: 600 }}>20% </span> MORE
+          QUALITY
         </Typography>
       </Box>
 
@@ -71,6 +190,7 @@ export default function ContactPage() {
           onSubmit={handleSubmit}
           noValidate
           sx={{
+            width: '100%',
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
@@ -83,10 +203,7 @@ export default function ContactPage() {
               theme.palette.mode === 'dark' ? '#333' : 'rgba(0, 0, 0, 0.1)',
           }}
         >
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: 600, color: '#BB0E80' }}
-          >
+          <Typography variant="h6" sx={{ fontWeight: 600, color: '#BB0E80' }}>
             Send us a message
           </Typography>
 
@@ -98,6 +215,9 @@ export default function ContactPage() {
             variant="outlined"
             value={formData.name}
             onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.name && !!errors.name}
+            helperText={touched.name ? errors.name : ''}
           />
 
           <TextField
@@ -109,6 +229,9 @@ export default function ContactPage() {
             variant="outlined"
             value={formData.email}
             onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.email && !!errors.email}
+            helperText={touched.email ? errors.email : ''}
           />
 
           <TextField
@@ -121,12 +244,16 @@ export default function ContactPage() {
             variant="outlined"
             value={formData.message}
             onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.message && !!errors.message}
+            helperText={touched.message ? errors.message : ''}
           />
 
           <Button
             type="submit"
             variant="contained"
             size="large"
+            disabled={isSubmitDisabled}
             sx={{
               backgroundColor: '#BB0E80',
               textTransform: 'none',
@@ -143,7 +270,6 @@ export default function ContactPage() {
           </Button>
         </Box>
 
-        {/* Info Section */}
         <Box
           sx={{
             flex: 1,
@@ -164,11 +290,13 @@ export default function ContactPage() {
             >
               Strategic Design Communication
             </Typography>
-<Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
-  At MTN Communications, we bring the visionary expertise of renowned architects from abroad to the UK stage.
-  Our company was founded on the belief that world-class architectural expertise should be accessible and
-  affordable for everyone—whether you&apos;re an individual, a business, or a large organization.
-</Typography>
+            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
+              At MTN Communications, we bring the visionary expertise of renowned
+              architects from abroad to the UK stage. Our company was founded on
+              the belief that world-class architectural expertise should be
+              accessible and affordable for everyone—whether you&apos;re an
+              individual, a business, or a large organization.
+            </Typography>
           </Box>
 
           <Box>
@@ -201,6 +329,31 @@ export default function ContactPage() {
           </Box>
         </Box>
       </Box>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{mt: 8}}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          elevation={6}
+          variant="filled"
+              sx={{
+      width: { md: '800px', xs: '100%' },
+      backgroundColor: '#BB0E80', 
+      color: '#fff', 
+      '& .MuiAlert-icon': {
+        color: '#fff', 
+      },
+    }}
+        >
+          Message Sent Successfully!
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }
