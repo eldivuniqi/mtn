@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "MTN Architecture Outsourcing – UK to Global Design Services",
   description: "Outsource architecture design with MTN Communications. We connect UK firms to affordable, high-quality global architecture talent.",
     icons: {
-    icon: "/images/mtn.png", 
+    icon: [{url: "/images/mtn.png", sizes: '32x32', type: 'image/png'}], 
   },
 };
 
