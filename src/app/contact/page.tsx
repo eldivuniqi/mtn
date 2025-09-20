@@ -10,7 +10,7 @@ import {
   Snackbar,
   Alert,
 } from '@mui/material';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -34,6 +34,9 @@ export default function ContactPage() {
   });
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+  // Ref for hidden form to submit to Formsubmit.co
+  const formsubmitRef = useRef<HTMLFormElement>(null);
 
   const validateName = (name: string) => {
     if (!name.trim()) return 'Name is required';
@@ -111,12 +114,20 @@ export default function ContactPage() {
     }
 
     try {
+      // Store in Firestore as usual
       await addDoc(collection(db, 'contactMessages'), {
         name: formData.name.trim(),
         email: formData.email.trim(),
         message: formData.message.trim(),
         timestamp: serverTimestamp(),
       });
+
+      // Submit the hidden form to Formsubmit.co
+      if (formsubmitRef.current) {
+        formsubmitRef.current.submit();
+      }
+
+      // Reset form & errors
       setFormData({ name: '', email: '', message: '' });
       setErrors({ name: '', email: '', message: '' });
       setTouched({ name: false, email: false, message: false });
@@ -184,7 +195,7 @@ export default function ContactPage() {
           justifyContent: 'center',
         }}
       >
-        {/* Form */}
+        {/* Your existing form */}
         <Box
           component="form"
           onSubmit={handleSubmit}
@@ -195,7 +206,8 @@ export default function ContactPage() {
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
-            backgroundColor: theme.palette.mode === 'dark' ? '#1a1a1a' : '#f9f9f9',
+            backgroundColor:
+              theme.palette.mode === 'dark' ? '#1a1a1a' : '#f9f9f9',
             p: 4,
             borderRadius: 2,
             border: '1px solid',
@@ -270,6 +282,7 @@ export default function ContactPage() {
           </Button>
         </Box>
 
+        {/* Your existing info box */}
         <Box
           sx={{
             flex: 1,
@@ -330,26 +343,41 @@ export default function ContactPage() {
         </Box>
       </Box>
 
+      {/* Hidden form to send email via Formsubmit.co */}
+      <form
+        ref={formsubmitRef}
+        action="https://formsubmit.co/info@mtn-com.com"
+        method="POST"
+        style={{ display: 'none' }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <input type="text" name="name" value={formData.name} readOnly />
+        <input type="email" name="email" value={formData.email} readOnly />
+        <textarea name="message" value={formData.message} readOnly />
+        <input type="hidden" name="_captcha" value="false" />
+      </form>
+
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
         onClose={handleSnackbarClose}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        sx={{mt: 8}}
+        sx={{ mt: 8 }}
       >
         <Alert
           onClose={handleSnackbarClose}
           severity="success"
           elevation={6}
           variant="filled"
-              sx={{
-      width: { md: '800px', xs: '100%' },
-      backgroundColor: '#BB0E80', 
-      color: '#fff', 
-      '& .MuiAlert-icon': {
-        color: '#fff', 
-      },
-    }}
+          sx={{
+            width: { md: '800px', xs: '100%' },
+            backgroundColor: '#BB0E80',
+            color: '#fff',
+            '& .MuiAlert-icon': {
+              color: '#fff',
+            },
+          }}
         >
           Message Sent Successfully!
         </Alert>
