@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MTN Communications",
-  description: "Connecting architecture through the world",
+  title: "MTN Architecture Outsourcing – UK to Global Design Services",
+  description: "Outsource architecture design with MTN Communications. We connect UK firms to affordable, high-quality global architecture talent.",
+    icons: {
+    icon: "/images/mtn.png", 
+  },
 };
 
 export default function RootLayout({

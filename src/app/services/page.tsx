@@ -1,9 +1,8 @@
-"use client";
-
 import React from 'react';
-import { Box, Typography, Container, Card, CardContent, Grid } from '@mui/material';
+import { Box, Typography, Container, Card, CardContent } from '@mui/material';
 import Accordion from '@/components/Accordion';
 import CustomCard from '@/components/CustomCard';
+import Head from 'next/head';
 
 const accordionData = [
     { title: 'PHASE A+B: Inception and Feasibility', description: 'Establishing the clients requirements and assessing constraints, Preparing feasibility studies to evaluate project viability, Identifying statutory and legal requirements, Developing initial strategic brief, Assembling key consultants and advisors for project development.' },
@@ -31,6 +30,14 @@ export default function Services() {
     
 
     return (
+      <>
+      <Head>
+        <title>Architectural Design Services | MTN Communications</title>
+        <meta
+          name="description"
+          content={`Discover MTN Communications’ comprehensive architectural and urban design services, offering professional consultancy and expert solutions tailored for UK clients.`}
+        />
+      </Head>
         <Box
             sx={{
                 minHeight: '100vh',
@@ -143,5 +150,6 @@ export default function Services() {
                 </Box>
             </Box>
         </Box>
+        </>
     );
 }

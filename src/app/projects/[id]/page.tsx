@@ -6,6 +6,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import projects from '@/data/projects.json';
+import Head from 'next/head';
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -29,6 +30,14 @@ export default function ProjectDetailPage() {
   const displayedPhotos = showAll ? photoSrc : photoSrc.slice(0, 5);
 
   return (
+    <>
+      <Head>
+        <title>Explore {title} | MTN Communications Architectural Excellence</title>
+        <meta
+          name="description"
+          content={`Discover the innovative design and craftsmanship behind ${title}, a featured project by MTN Communications. See detailed images, watch video walkthroughs, and experience world-class architectural solutions tailored for UK clients.`}
+        />
+      </Head>
     <Container sx={{ mt: 4 }}>
       <Box sx={{ maxWidth: 1100, mx: 'auto', py: 4, px: 2 }}>
         <Button
@@ -135,5 +144,6 @@ export default function ProjectDetailPage() {
         )}
       </Box>
     </Container>
+    </>
   );
 }

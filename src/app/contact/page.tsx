@@ -13,6 +13,7 @@ import {
 import { useState } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import Head from 'next/head';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -180,6 +181,14 @@ export default function ContactPage() {
     !!errors.message;
 
   return (
+    <>
+      <Head>
+        <title>Contact MTN Communications | Expert Architectural Design Services UK</title>
+        <meta
+          name="description"
+          content="Get in touch with MTN Communications — connecting the UK with visionary architects worldwide. Reach out for affordable, world-class architectural expertise tailored for individuals, businesses, and organizations. We typically respond within 24 hours."
+        />
+      </Head>
     <Container maxWidth="lg" sx={{ py: { xs: 8, sm: 12 } }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography
@@ -388,5 +397,6 @@ export default function ContactPage() {
         </Alert>
       </Snackbar>
     </Container>
+    </>
   );
 }

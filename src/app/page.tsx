@@ -1,7 +1,12 @@
-'use client'
 import React from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
+
+export const metadata = {
+  title: "Contact MTN – Architecture Outsourcing UK to Global",
+  description:
+    "Get in touch with MTN Communications for expert architecture outsourcing services tailored to your firm’s needs.",
+};
 
 export default function Page() {
   return (

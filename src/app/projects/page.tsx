@@ -4,6 +4,11 @@ import Link from 'next/link';
 
 import projectsData from '@/data/projects.json'; 
 
+export const metadata = {
+  title: 'Our Architectural Projects Portfolio | MTN Communications',
+  description: 'Explore MTN Communications’ diverse portfolio of architectural projects showcasing innovative designs and quality craftsmanship. Discover visionary solutions tailored for individuals and businesses across the UK.',
+};
+
 export default function Projects() {
   return (
     <Container sx={{ my: 5 }}>

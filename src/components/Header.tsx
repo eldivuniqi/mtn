@@ -55,7 +55,6 @@ export default function Header() {
                 pr: 3,
                 '&:hover': {
                   color: 'rgb(187, 14, 128)',
-                  textDecoration: 'underline',
                 },
               }}
             >
