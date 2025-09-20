@@ -10,7 +10,7 @@ import {
   Snackbar,
   Alert,
 } from '@mui/material';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -34,9 +34,6 @@ export default function ContactPage() {
   });
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-
-  // Ref for hidden form to submit to Formsubmit.co
-  const formsubmitRef = useRef<HTMLFormElement>(null);
 
   const validateName = (name: string) => {
     if (!name.trim()) return 'Name is required';
@@ -114,7 +111,6 @@ export default function ContactPage() {
     }
 
     try {
-      // Store in Firestore as usual
       await addDoc(collection(db, 'contactMessages'), {
         name: formData.name.trim(),
         email: formData.email.trim(),
@@ -122,12 +118,38 @@ export default function ContactPage() {
         timestamp: serverTimestamp(),
       });
 
-      // Submit the hidden form to Formsubmit.co
-      if (formsubmitRef.current) {
-        formsubmitRef.current.submit();
-      }
+      const tempForm = document.createElement('form');
+      tempForm.action = 'https://formsubmit.co/info@mtn-com.com'; 
+      tempForm.method = 'POST';
+      tempForm.target = '_blank';
 
-      // Reset form & errors
+      const nameInput = document.createElement('input');
+      nameInput.type = 'text';
+      nameInput.name = 'name';
+      nameInput.value = formData.name;
+      tempForm.appendChild(nameInput);
+
+      const emailInput = document.createElement('input');
+      emailInput.type = 'email';
+      emailInput.name = 'email';
+      emailInput.value = formData.email;
+      tempForm.appendChild(emailInput);
+
+      const messageInput = document.createElement('textarea');
+      messageInput.name = 'message';
+      messageInput.value = formData.message;
+      tempForm.appendChild(messageInput);
+
+      const captchaInput = document.createElement('input');
+      captchaInput.type = 'hidden';
+      captchaInput.name = '_captcha';
+      captchaInput.value = 'false';
+      tempForm.appendChild(captchaInput);
+
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+      document.body.removeChild(tempForm);
+
       setFormData({ name: '', email: '', message: '' });
       setErrors({ name: '', email: '', message: '' });
       setTouched({ name: false, email: false, message: false });
@@ -195,7 +217,6 @@ export default function ContactPage() {
           justifyContent: 'center',
         }}
       >
-        {/* Your existing form */}
         <Box
           component="form"
           onSubmit={handleSubmit}
@@ -282,7 +303,6 @@ export default function ContactPage() {
           </Button>
         </Box>
 
-        {/* Your existing info box */}
         <Box
           sx={{
             flex: 1,
@@ -342,21 +362,6 @@ export default function ContactPage() {
           </Box>
         </Box>
       </Box>
-
-      {/* Hidden form to send email via Formsubmit.co */}
-      <form
-        ref={formsubmitRef}
-        action="https://formsubmit.co/info@mtn-com.com"
-        method="POST"
-        style={{ display: 'none' }}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <input type="text" name="name" value={formData.name} readOnly />
-        <input type="email" name="email" value={formData.email} readOnly />
-        <textarea name="message" value={formData.message} readOnly />
-        <input type="hidden" name="_captcha" value="false" />
-      </form>
 
       <Snackbar
         open={snackbarOpen}
