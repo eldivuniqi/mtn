@@ -20,7 +20,7 @@ export default function Footer() {
           align="center"
           sx={{ mb: 2, fontWeight: 'medium' }}
         >
-          © 2025 MTN Communications. All Rights Reserved.
+          © 2026 MTN Communications. All Rights Reserved.
         </Typography>
 
         {/* <Box
