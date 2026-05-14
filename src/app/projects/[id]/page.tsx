@@ -47,7 +47,7 @@ export default function ProjectDetailPage() {
             mb: 2,
             textTransform: 'none',
             fontWeight: 500,
-            color: 'rgb(33, 33, 33)',
+            color: 'rgb(217, 215, 215)',
           }}
         >
           Back to Projects

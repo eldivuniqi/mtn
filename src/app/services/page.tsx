@@ -52,7 +52,7 @@ export default function Services() {
             }}
         >
             <Box sx={{ maxWidth: "600px", mb: 6 }}>
-                <Typography variant="h3" gutterBottom>
+                <Typography variant="h3" sx={{color: '#111'}} gutterBottom>
                     Connecting the world through design.
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary">
@@ -125,13 +125,14 @@ export default function Services() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '100vh', 
+    pt: 10,
+    pb: 10,
     textAlign: 'center', 
     px: 2, 
   }}
 >
-  <Box sx={{ maxWidth: 600, mb: 6 }}>
-    <Typography variant="h5" gutterBottom>
+  <Box sx={{ maxWidth: 600, mb: 0 }}>
+    <Typography variant="h5" color='#111' gutterBottom>
       Ensuring Perfection and Precision in Every Project, Backed by Renowned Architectural Expertise.
     </Typography>
     <Typography variant="subtitle1" color="text.secondary">

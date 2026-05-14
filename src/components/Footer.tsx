@@ -18,9 +18,16 @@ export default function Footer() {
         <Typography
           variant="body2"
           align="center"
-          sx={{ mb: 2, fontWeight: 'medium' }}
+          sx={{ fontWeight: 'medium', pt: 1 }}
         >
           © 2026 MTN Communications. All Rights Reserved.
+        </Typography>
+                <Typography
+          variant="body2"
+          align="center"
+          sx={{ mb: 2, fontWeight: 'medium', color: 'rgb(187, 14, 128)' }}
+        >
+          info@mtn-com.com
         </Typography>
 
         {/* <Box

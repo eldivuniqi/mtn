@@ -196,7 +196,7 @@ export default function ContactPage() {
           component="h1"
           sx={{
             fontWeight: 700,
-            color: theme.palette.mode === 'dark' ? '#fff' : '#111',
+            color: '#fff',
             mb: 1,
           }}
         >
@@ -332,7 +332,7 @@ export default function ContactPage() {
             >
               Strategic Design Communication
             </Typography>
-            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
+            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#fff' }}>
               At MTN Communications, we bring the visionary expertise of renowned
               architects from abroad to the UK stage. Our company was founded on
               the belief that world-class architectural expertise should be
@@ -352,7 +352,7 @@ export default function ContactPage() {
             >
               Contact Information
             </Typography>
-            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#555' }}>
+            <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#fff' }}>
               We typically respond within 24 hours.
               <br />
               For direct inquiries, please email:
