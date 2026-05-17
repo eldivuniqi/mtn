@@ -205,7 +205,7 @@ export default function ContactPage() {
         <Typography
           variant="h6"
           sx={{
-            color: theme.palette.mode === 'dark' ? '#ccc' : '#555',
+            color: '#ccc',
             maxWidth: 600,
             mx: 'auto',
           }}
@@ -236,13 +236,11 @@ export default function ContactPage() {
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
-            backgroundColor:
-              theme.palette.mode === 'dark' ? '#1a1a1a' : '#f9f9f9',
+            backgroundColor: 'white',
             p: 4,
             borderRadius: 2,
             border: '1px solid',
-            borderColor:
-              theme.palette.mode === 'dark' ? '#333' : 'rgba(0, 0, 0, 0.1)',
+            borderColor: '#333',
           }}
         >
           <Typography variant="h6" sx={{ fontWeight: 600, color: '#BB0E80' }}>
